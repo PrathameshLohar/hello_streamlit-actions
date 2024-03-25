@@ -1,12 +1,24 @@
-name: Hello Streamlit
-    run: pip3 install streamlit
+name: Run Streamlit App
 
-  - name: Deploy code
-    env:
-      SERVER_IP: localhost
-      PORT: 8600
-    run: |
-      streamlit run streamlit_app.py --server.address localhost  --server.port 8600
-  - name: start local server
-    run: |
-      python -m http.server 8600
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.12.2
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.12.2' # Update if needed for your app
+
+      - name: Install dependencies
+        run: pip install streamlit
+
+      - name: Run the Streamlit app
+        run: streamlit run path/to/your/app.py
+
