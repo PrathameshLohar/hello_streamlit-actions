@@ -1,5 +1,5 @@
 name: Hello Streamlit
-    run: pip install streamlit
+    run: pip3 install streamlit
 
   - name: Deploy code
     env:
