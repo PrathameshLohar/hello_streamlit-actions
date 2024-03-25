@@ -1,9 +1,12 @@
-name: Streamlit app
-on: push
+name: Hello Streamlit
+    run: pip install streamlit
 
-jobs:
-  job_1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Running hello app
-        run: streamlit run .\app.py
+  - name: Deploy code
+    env:
+      SERVER_IP: localhost
+      PORT: 8600
+    run: |
+      streamlit run streamlit_app.py --server.address localhost  --server.port 8600
+  - name: start local server
+    run: |
+      python -m http.server 8600
