@@ -1,4 +1,4 @@
-name: Run Streamlit App
+name: Run Hello World Streamlit App
 
 on:
   push:
@@ -14,11 +14,10 @@ jobs:
       - name: Set up Python 3.12.2
         uses: actions/setup-python@v3
         with:
-          python-version: '3.12.2' # Update if needed for your app
+          python-version: '3.12.2' # Update if needed for newer versions
 
       - name: Install dependencies
         run: pip install streamlit
 
       - name: Run the Streamlit app
-        run: streamlit run path/to/your/app.py
-
+        run: streamlit run app.py
