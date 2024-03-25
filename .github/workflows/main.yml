@@ -20,7 +20,7 @@ jobs:
         # Upload the HTML file to GitHub Pages
         # Make sure to replace <username> with your GitHub username
       - name: Deploy to GitHub Pages
-        uses: PrathameshLohar/github-pages-deploy-action@4.1.4
+        uses: PrathameshLohar/hello_streamlit-actions@4.1.4
         with:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
